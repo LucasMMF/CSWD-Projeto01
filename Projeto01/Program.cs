@@ -1,4 +1,5 @@
 ﻿using Projeto01.Entities;
+using Projeto01.Repositories;
 
 // Definindo o namespace da classe (localização)
 namespace Projeto01
@@ -31,6 +32,13 @@ namespace Projeto01
 
                 Console.Write("Informe a data de nascimento..: ");
                 cliente.DataNascimento = DateTime.Parse(Console.ReadLine());
+
+                // Criando um objeto (variável de instância)
+                // para a classe ClienteRepository
+                var clienteRepository = new ClienteRepository();
+
+                // Executar a gravação do arquivo
+                clienteRepository.GravarArquivo(cliente);
 
                 // Imprimindo os campos
                 // cw -> 2x[tab]
